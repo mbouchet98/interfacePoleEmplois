@@ -1,0 +1,374 @@
+/************************/
+/*Polices*/
+@font-face {
+    font-family: 'ralewaybold';
+    src: url('fonts/Raleway-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ralewayregular';
+    src: url('fonts/Raleway-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.cadre {
+   margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(245, 245, 245, 0.9);
+	}
+/* GT 20181026*/
+.test .panel {
+    box-shadow: 1px 1px 15px #707171;
+    border: 0px;
+}
+
+.ms-rtestate-field {
+    display: inherit !important;
+}
+
+.proposActu {
+    margin-top: -17px;
+    /*display:none;*/
+}
+
+.fond {
+    background: red;
+}
+/*.modal{
+      overflow-y: auto;
+      max-height: 90%;
+      position: fixed;
+}*/
+
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+    padding-top: 163px;
+    text-align: center;
+
+}
+.vertical-align-center {
+    /* To center vertically */
+
+    display: table-cell;
+    vertical-align: middle;
+}
+.modal-content {
+  /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+  width:inherit;
+  height:inherit;
+  /* To center horizontally */
+  margin: 0 auto;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+    width: 100%;
+
+}
+
+.modal-body {
+    padding: 2px 16px;
+    background-color: white;
+    width: 100%;
+    max-height: calc(90vh - 210px);
+    overflow-y: auto;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: black;
+    width: 100%;
+
+}
+/*cutom select 1*/
+.custom-select label {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-select select {
+    display: inline-block;
+    border: 2px solid #316DAA;
+    padding: 4px 3px 3px 5px;
+    margin: 0;
+    font: inherit;
+    outline: none;
+    background: #e6f3ff;
+    line-height: 1.2;
+    -webkit-appearance: none; /* remove the strong OSX influence from Webkit */
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+    .custom-select select:focus {
+        -webkit-box-shadow: 0 0 3px 1px #5c85d6;
+        -moz-box-shadow: 0 0 3px 1px #5c85d6;
+        box-shadow: 0 0 3px 1px #5c85d6;
+    }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .custom-select select {
+        padding-right: 30px;
+    }
+}
+
+.custom-select:after {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 60%;
+    line-height: 30px;
+    padding: 0 7px;
+    background: #3973ac;
+    color: white;
+    pointer-events: none;
+    -webkit-border-radius: 0 6px 6px 0;
+    -moz-border-radius: 0 6px 6px 0;
+    border-radius: 0 6px 6px 0;
+}
+
+.no-pointer-events .custom-select:after {
+    content: none;
+}
+
+/*custom select 2*/
+.custom-select2 label {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-select2 select {
+    display: inline-block;
+    border: 2px solid #00cc00;
+    padding: 4px 3px 3px 5px;
+    margin: 0;
+    font: inherit;
+    outline: none;
+    background: #ccffcc;
+    line-height: 1.2;
+    -webkit-appearance: none; /* remove the strong OSX influence from Webkit */
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+    .custom-select2 select:focus {
+        -webkit-box-shadow: 0 0 3px 1px #00e600;
+        -moz-box-shadow: 0 0 3px 1px #00e600;
+        box-shadow: 0 0 3px 1px #00e600;
+    }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .custom-select2 select {
+        padding-right: 30px;
+    }
+}
+
+.custom-select2:after {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 60%;
+    line-height: 30px;
+    padding: 0 7px;
+    background: #00b359;
+    color: white;
+    pointer-events: none;
+    -webkit-border-radius: 0 6px 6px 0;
+    -moz-border-radius: 0 6px 6px 0;
+    border-radius: 0 6px 6px 0;
+}
+
+.no-pointer-events .custom-select2:after {
+    content: none;
+}
+
+/*custom select 3*/
+.custom-select3 label {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-select3 select {
+    display: inline-block;
+    border: 2px solid #cc0000;
+    padding: 4px 3px 3px 5px;
+    margin: 0;
+    font: inherit;
+    outline: none;
+    background: #ffb3b3;
+    line-height: 1.2;
+    -webkit-appearance: none; /* remove the strong OSX influence from Webkit */
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+    .custom-select3 select:focus {
+        -webkit-box-shadow: 0 0 3px 1px #b30000;
+        -moz-box-shadow: 0 0 3px 1px #b30000;
+        box-shadow: 0 0 3px 1px #b30000;
+    }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .custom-select3 select {
+        padding-right: 30px;
+    }
+}
+
+.custom-select3:after {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 60%;
+    line-height: 30px;
+    padding: 0 7px;
+    background: #e60000;
+    color: white;
+    pointer-events: none;
+    -webkit-border-radius: 0 6px 6px 0;
+    -moz-border-radius: 0 6px 6px 0;
+    border-radius: 0 6px 6px 0;
+}
+
+.no-pointer-events .custom-select3:after {
+    content: none;
+}
+
+
+/*custom input*/
+.custom-input label {
+    position: relative;
+    display: inline-block;
+}
+
+.custom-input input {
+    display: inline-block;
+    border: 2px solid #ff8000;
+    padding: 4px 3px 3px 5px;
+    margin: 0;
+    font: inherit;
+    outline: none;
+    background: #ffd9b3;
+    line-height: 1.2;
+    -webkit-appearance: none; /* remove the strong OSX influence from Webkit */
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+    .custom-input input:focus {
+        -webkit-box-shadow: 0 0 3px 1px #e67300;
+        -moz-box-shadow: 0 0 3px 1px #e67300;
+        box-shadow: 0 0 3px 1px #e67300;
+    }
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .custom-input input {
+        padding-right: 30px;
+    }
+}
+
+.custom-input:after {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 60%;
+    line-height: 30px;
+    padding: 0 7px;
+    background: #e67300;
+    color: white;
+    pointer-events: none;
+    -webkit-border-radius: 0 6px 6px 0;
+    -moz-border-radius: 0 6px 6px 0;
+    border-radius: 0 6px 6px 0;
+}
+
+/* mets tout les titres en majuscule*/
+.majuscule {
+    text-transform: uppercase;
+}
+
+/* Color des offres emplois*/
+.contour {
+    /*border: 2px solid #4775d1;  GT 20181026*/
+}
+
+.arriere {
+    background-color: #4775d1;
+    color: white;
+}
+
+#selectLieu {
+    border: hidden;
+    border-top: hidden;
+    border-bottom: 2px solid #0099ff;
+    background-color: aliceblue;
+}
+
+#selectContrat {
+    border: hidden;
+    border-top: hidden;
+    border-bottom: 2px solid #00cc00;
+    background-color: aliceblue;
+}
+
+#selectDuree {
+    border: hidden;
+    border-top: hidden;
+    border-bottom: 2px solid #cc0000;
+    background-color: aliceblue;
+}
+
+#txtMotCle {
+    border: hidden;
+    border-top: 2px solid aliceblue;
+    border-bottom: 2px solid #ff8000;
+    background-color: aliceblue;
+}
+
+
+
+#local{
+  visibility: visible;
+}
+#my_osm_widget_map { /* use the same name as <div id=""> */
+	width: 100%; /* important! if you need full width display */
+	height: 400px;
+	margin: 0;
+	border-radius: 5px;
+	/* ... */
+}
+
+p.compteur-offres {
+    margin-top: 1.25rem;
+    margin-bottom: 1.57rem;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.75em;
+}
+
+
+.compteur-offres-chiffre {
+    display: inline-block;
+    padding: 0 .5rem;
+    margin: 0 .07rem;
+    background-color: #d23c83;
+    color: #fff;
+    font-family: DroidSansBold,"Open Sans",Arial,sans-serif;
+    font-size: 1.75em;
+    line-height: 1.5em;
+}
+
+}
