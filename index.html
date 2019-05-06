@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" type="text/css" href="Css/style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="Css/sweetalert2.css"/>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="Js/sweetalert2.js"></script>
+    <script src="Js/js.js"></script>
+     <title>Offres d'emplois - Territoire de la Communauté de communes de Parthenay-Gâtine</title>
+</head>
+<body   style="background-image:url(Img/fond.jpg); font-family: ralewayregular;background-position: center !important; background-attachment: fixed !important;background-size: cover !important; ">
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10 ">
+            <div class="col-md-1"></div>
+            <div class="col-md-10 cadre">
+                <div>
+                    <h1>
+                        <img src="Img/Logo_Pôle_Emploi.png" style="width: 120px; height: 100px; float: right; text-align-last: left" /><br />
+                        Offres d'emploi sur le territoire</h1>
+                    <div class=" col-md-12">
+                        <form>
+
+                            <div class="form-group col-md-6 custom-select ">
+                                <label for="sel1">Lieu  </label>
+                                <!-- Select Lieu -->
+                                <select id="selectLieu" class="event-type-select form-control">
+                                    <option value="">Tout le territoire</option>
+                                    <option value="Adilly">Adilly</option>
+                                    <option value="Allonne">Allonne</option>
+                                    <option value="Amailloux">Amailloux</option>
+                                    <option value="Azay-sur-Thouet">Azay-sur-Thouet</option>
+                                    <option value="Chantecorps">Chantecorps</option>
+                                    <option value="LaChapelle-Bertrand">La Chapelle-Bertrand</option>
+                                    <option value="Châtillon-sur-Thouet">Châtillon-sur-Thouet</option>
+                                    <option value="Coutières">Coutières</option>
+                                    <option value="Doux">Doux</option>
+                                    <option value="Fénery">Fénery</option>
+                                    <option value="LaFerrière-en-Parthenay">La Ferrière-en-Parthenay</option>
+                                    <option value="Fomperron">Fomperron</option>
+                                    <option value="LesForges">Les Forges</option>
+                                    <option value="Gourgé">Gourgé</option>
+                                    <option value="Lageon">Lageon</option>
+                                    <option value="Lhoumois">Lhoumois</option>
+                                    <option value="Ménigoute">Ménigoute</option>
+                                    <option value="Oroux">Oroux</option>
+                                    <option value="LaPeyratte">La Peyratte</option>
+                                    <option value="Pompaire">Pompaire</option>
+                                    <option value="Parthenay">Parthenay</option>
+                                    <option value="Pougne-Hérisson">Pougne-Hérisson</option>
+                                    <option value="Pressigny">Pressigny</option>
+                                    <option value="Reffannes">Reffannes</option>
+                                    <option value="LeRetail">Le Retail</option>
+                                    <option value="Saint-Aubin-le-Cloud">Saint-Aubin-le-Cloud</option>
+                                    <option value="Saint-Germain-de-Longue-Chaume">Saint-Germain-de-Longue-Chaume</option>
+                                    <option value="Saint-Germier">Saint-Germier</option>
+                                    <option value="Saint-Martin-du-Fouilloux">Saint-Martin-du-Fouilloux</option>
+                                    <option value="Saurais">Saurais</option>
+                                    <option value="Secondigny">Secondigny	</option>
+                                    <option value="LeTallud">Le Tallud</option>
+                                    <option value="Thénezay">Thénezay</option>
+                                    <option value="Vasles">Vasles</option>
+                                    <option value="Vausseroux">Vausseroux</option>
+                                    <option value="Vautebis">Vautebis</option>
+                                    <option value="Vernoux-en-Gâtine">Vernoux-en-Gâtine</option>
+                                    <option value="Viennay">Viennay</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6 custom-select2">
+                                <label for="sel1">Contrat </label>
+                                <!-- Select Contrat -->
+                                <select id="selectContrat" class="event-type-select form-control">
+                                    <option value="">Tous</option>
+                                    <option value="CDI">CDI - Contrat à durée indéterminée</option>
+                                    <option value="CDD">CDD - Contrat à durée déterminée</option>
+                                    <option value="CDS">CDS - CDD Sénior </option>
+                                    <option value="INT">INT - Contrat travail intermittent</option>
+                                    <option value="MIS">MIS - Travail intermédiaire</option>
+                                    <option value="SAI">SAI - Contrat travail saisonnier</option>
+                                    <option value="CCE">CCE - Profession commerciale</option>
+                                    <option value="FRA">FRA - Franchise</option>
+                                    <option value="CDU">CDU - Contrat d'usage</option>
+                                    <option value="DDI">DDI - Contrat à durée déterminée insertion</option>
+                                    <option value="TTI">TTI - Contrat travail temporaire insertion</option>
+                                    <option value="LIB">LIB - Profession libérale</option>
+                                    <option value="REP">REP - Reprise d'entreprise</option>
+                                </select>
+                            </div>
+                            <!-- Input mot-cle -->
+                            <div class="form-group col-md-6 custom-input">
+                                <label for="motCle">Métier/Mot-clé </label>
+                                <input type="text" class="form-control" id="txtMotCle" />
+                            </div>
+                            <div class="form-group col-md-6 custom-select3">
+                                <label for="sel1">Durée hebdomadaire </label>
+                                <!-- Select Temps -->
+                                <select id="selectDuree" class="event-type-select form-control">
+                                    <option value="">Tous</option>
+                                    <option value="partiel">Temps partiel</option>
+                                    <option value="plein">Temps plein</option>
+                                </select>
+                            </div>
+                            <div>
+                              <div class="col-md-4"></div>
+                                <!-- boutton reset ok -->
+                                <button type="reset" class="btn col-md-4" onclick="window.location.reload()">Réinitialiser</button>
+                                <div class="col-md-4"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Les offres -->
+                <!-- il manque plus cas programmer les bouton a l'interrieur -->
+                <!-- code des offres-->
+                <div id="idToutOffre" style="padding-top: 100px;">
+
+                    <hr />
+                    <h3>
+
+                        <br />
+                    </h3>
+                    <div id="nbre" style="padding-bottom: 10px;"></div>
+                    <div id="offre">
+
+                          <div class="col-md-6 test " data-custom-type="Parthenay CDI plein">
+                            <div class="panel">
+                                <div id="head" class="panel-heading majuscule contour arriere" style="font-weight: bold;">Aide de cuisine</div>
+                                <div class="panel-body contour">
+                                    <p style="text-align: justify center;">
+                                        <span style="color: #4775d1; font-weight: bold;">CDI </span>- Contrat à durée indéternimée
+                                        <br />
+                                        <span style="color: #4775d1; font-weight: bold;">Parthenay</span>
+                                        <br />
+                                        Employeur : <span style="color: #4775d1; font-weight: bold;">Parthenay</span>
+                                    <a class="btn btn-link arriere" data-toggle="modal" data-target="#myModal" style="position: relative; float: right; margin: -22px -28px;">
+                                        <img src="Img/button.png" style="width: 80px; height: 70px;" /></a>
+                                    </p>
+                                    <!-- The Modal -->
+                                    <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <!-- Modal content -->
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <h2 class="modal-title majuscule" style="font-weight: bold">Aide de cuisine</h2>
+                                                    <p>Parthenay</p>
+                                                    <p>publie le 15/10</p>
+                                                    <p>offre n°0789652QZ</p>
+                                                </div>
+                                                <div class="modal-body col-sm-12">
+                                                    <div>
+                                                      <div class="col-sm-6">
+                                                        <p>Au sein d'un restaurent italien, vous serez chargé d'aider le chef de cuisine. Vous cuisinez des produits frais uniquement. Vous êtes en charge des taillages, pluches. Vous effectuez 5 services du midi et du soir Débutants bienvenus</p>
+                                                      </div>
+                                                      <div class="col-sm-6">
+                                                        <p>CDI - contrat à durée indéterminée</p>
+                                                        <p>24H Horaire variables</p>
+                                                        <p>Salaire : horaire de 9.88 Euros</p>
+                                                        <p>
+                                                          <a id="signin" data-toggle="modal" data-target="#local" class="btn btn-link arriere">Localisation</a>
+                                                        </p>
+                                                        <br />
+                                                      </div>
+                                                    </div>
+
+                                                    <div class="col-sm-12">
+
+                                                      <h3 style="font-weight: bold; color: green;">Profil souhaité</h3>
+                                                      <h4 style="font-weight: bold; color: darkgreen;">expériance</h4>
+                                                      <p style="border:1px solid grey; border-radius: 10px; width:150px;text-align:center;">debutant accepté</p>
+                                                      <h4 style="font-weight: bold; color: darkgreen;">Compétence</h4>
+                                                    </div>
+
+                                                    <div class="col-sm-12">
+                                                      <div>
+                                                        <p class="col-md-5"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">entretinir différent matériel</p>
+                                                        <p class="col-md-5"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">entretenir son poste</p>
+                                                        <p class="col-md-5"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">eplucher les légumes</p>
+                                                        <p class="col-md-5"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">faire la plonge</p>
+                                                      </div>
+                                                    </div>
+
+                                                    <br>
+                                                    <div class="col-sm-12">
+                                                      <h3 style="font-weight: bold; color: green;">Secteur d'activité</h3>
+                                                      <p>art du spectacle vivant</p>
+                                                    </div>
+
+                                                    <div class="col-sm-12">
+                                                      <h3 style="font-weight: bold; color: green;">Entreprise</h3>
+                                                    </div>
+
+                                                    <div class="col-sm-12">
+                                                      <h4 style="font-weight: bold; color: darkgreen;">l'entrepot</h4>
+                                                      <p>6 à 9 salariés</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="modal-footer col-sm-12">
+                                                  <!--  <h3>Aide en cuisine</h3>
+                                                    <p>offre n°0789652QZ</p>-->
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <!--Modal for uploading photo-->
+                                    <div class="modal vertical-alignment-helper" id="local" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                          <div class="modal-content" >
+                                            <div class="modal-header" style="background-color:#f35432; ">
+                                              <button type="button" id="close" class="close" data-dismiss="modal">&times;</button>
+                                              <h2 class="modal-title majuscule" style="font-weight: bold" id="local-title">Localisation</h2>
+                                            </div>
+                                            <div class="modal-body col-sm-12" style="border: 2px solid #f35432">
+                                              <p>L'offre est situé ce-dessous</p>
+                                              <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.25243073701858526%2C46.64766487095615%2C-0.2506068348884583%2C46.64931280079039&amp;layer=mapnik&amp;marker=46.64848884214908%2C-0.25151878595352173" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=46.64849&amp;mlon=-0.25152#map=19/46.64849/-0.25152&amp;layers=N">Afficher une carte plus grande</a></small>
+                                            </div>
+                                          </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div>
+                                </div>
+
+                                <div class="panel-footer contour">Publié le 15/10</div>
+                            </div>
+
+                          </div>
+
+                          <div class="col-md-6 test" data-custom-type="Parthenay CDD partiel">
+                              <div class="panel" data-eventtype="parthenay">
+                                  <div class="panel-heading majuscule contour arriere" style="font-weight: bold;">Agent / Agente d'entretien de nettoyage industriel</div>
+                                  <div class="panel-body contour">
+                                      <p style="text-align: justify center;">
+                                          <span style="color: #4775d1; font-weight: bold;">CDD</span> - Contrat à durée Déterminée<br />
+                                          <span style="color: #4775d1; font-weight: bold;">Parthenay</span><br />
+                                          Employeur : <span style="color: #4775d1; font-weight: bold;">Parthenay</span>
+
+                                          <a class="btn btn-link arriere" data-toggle="modal" data-target="#myModal2" style="position: relative; float: right; margin: -22px -28px;">
+                                              <img src="Img/button.png" style="width: 80px; height: 70px;" /></a>
+                                      </p>
+
+                                      <!-- The Modal -->
+                                      <div class="modal fade" id="myModal2" role="dialog">
+                                          <div class="modal-dialog">
+                                              <!-- Modal content -->
+                                              <div class="modal-content">
+                                                  <div class="modal-header">
+                                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                      <h2 class="modal-title majuscule" style="font-weight: bold;">Agent / Agente d'entretien de nettoyage industriel</h2>
+                                                      <p>Parthenay</p>
+                                                      <p>publie le 15/10</p>
+                                                      <p>offre n°07162132AADQZ</p>
+                                                  </div>
+                                                  <div class="modal-body col-sm-12">
+                                                      <div class="col-sm-6">
+                                                      <p>
+                                                          Skill Job, agence d'intérim et de recrutement, recherche pour l'un de ses clients basé sur Perigny (17), un(e) "Agent(e) d'entretien" H/F
+
+                                                              Vous assurez le nettoyage et l'entretien des locaux en respectant méthodiquement le planning de travail.
+                                                              Vous veillez à la bonne utilisation et l'entretien du matériel et des produits mis à disposition sans perturber la clientèle et/ou le travail du personnel en place
+
+                                                              Vous intervenez 2 fois par semaine le lundi et le jeudi de 08h00 à 10h00 soit 4h00
+                                                      </p>
+                                                    </div>
+                                                    <div class="col-sm-6">
+
+                                                      <p>
+                                                          Travail intérimaire - 6 Mois
+                                                              Contrat travail
+                                                      </p>
+                                                      <p>4H Horaires normaux</p>
+                                                      <p>Salaire : Horaire de 10.12 Euros à 10.13 Euros sur 12 mois</p>
+                                                      <p>
+                                                        <a id="signin2" data-toggle="modal" data-target="#local2" class="btn btn-link arriere">Localisation</a>
+                                                      </p>
+                                                    </div>
+
+                                                      <hr />
+                                                      <div class="col-sm-12">
+                                                        <h3 style="font-weight: bold; color: green;">Profil souhaité</h3>
+                                                        <h4 style="font-weight: bold; color: darkgreen;">expériance</h4>
+                                                        <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">6 mois</p>
+                                                      </div>
+                                                      <div class="col-sm-12">
+                                                        <h4 style="font-weight: bold; color: darkgreen;">Compétence</h4>
+                                                        <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">
+                                                            Baliser les zones glissantes
+                                                        </p>
+                                                        <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">Caractéristiques des produits d'entretien</p>
+                                                        <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">Entretenir des locaux</p>
+                                                        <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">Préparer le matériel adapté</p>
+                                                        <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:400px;text-align:center;margin:10px;">Renseigner les supports de suivi (horaire, lieu, ...) et informer l'interlocuteur concerné des anomalies constatées</p>
+                                                      </div>
+                                                      <div class="col-sm-12">
+                                                          <h4 style="font-weight: bold; color: darkgreen;">Formation</h4>
+                                                          <p></p>
+                                                     </div>
+                                                      <hr />
+                                                      <div class="col-sm-12">
+                                                        <h3 style="font-weight: bold; color: green;">info complémentaitre</h3>
+                                                        <p>Secteur d'activité : Activités des agences de travail temporaire</p>
+                                                      </div>
+                                                      <hr />
+                                                      <div class="col-sm-12">
+                                                        <h3 style="font-weight: bold; color: green;">Secteur d'activité</h3>
+                                                        <p>art du spectacle vivant</p>
+                                                      </div>
+                                                      <hr />
+                                                      <div class="col-sm-12">
+                                                        <h3 style="font-weight: bold; color: green;">Entreprise</h3>
+                                                        <h4 style="font-weight: bold; color: darkgreen;">l'entrepot</h4>
+                                                        <p>6 à 9 salariés</p>
+                                                      </div>
+                                                  </div>
+                                                  <div class="modal-footer col-sm-12">
+                                                    <!--  <h3>Aide en cuisine</h3>
+                                                      <p>offre n°07162132AADQZ</p>-->
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <!--Modal for uploading photo-->
+                                      <div class="modal vertical-alignment-helper" id="local2" tabindex="-1" role="dialog" 	aria-labelledby="myModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog ">
+                                            <div class="modal-content">
+                                              <div class="modal-header" style="background-color:#f35432; ">
+                                                <button type="button" id="close2" class="close" data-dismiss="modal">&times;</button>
+                                                <h2 class="modal-title majuscule" style="font-weight: bold" id="local-title">Localisation</h2>
+                                              </div>
+                                              <div class="modal-body col-sm-12" style="border: 2px solid #f35432">
+                                                <p>L'offre est situé ce-dessous</p>
+                                                  <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.2509367465972901%2C46.646932032399626%2C-0.2491128444671631%2C46.64857998456032&amp;layer=mapnik&amp;marker=46.64775509411211%2C-0.25002479553222656" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=46.64776&amp;mlon=-0.25002#map=19/46.64776/-0.25002&amp;layers=N">Afficher une carte plus grande</a></small>
+                                              </div>
+                                            </div><!-- /.modal-content -->
+                                          </div><!-- /.modal-dialog -->
+                                      </div>
+                                  </div>
+                                  <div class="panel-footer contour">Publié le 15/10</div>
+                              </div>
+
+                          </div>
+
+                          <div class="col-md-6 test" data-custom-type="LeTallud CDI partiel">
+                              <div class="panel">
+                                  <div class="panel-heading majuscule contour arriere" style="font-weight: bold;">Manutentionnaire</div>
+                                  <div class="panel-body contour">
+                                      <p style="text-align: justify center;">
+                                          <span style="color: #4775d1; font-weight: bold;">CDI</span> - Contrat à durée indéternimée<br />
+                                          <span style="color: #4775d1; font-weight: bold;">Le Tallud</span><br />
+                                          Employeur :<span style="color: #4775d1; font-weight: bold;">Le Tallud</span>
+
+                                          <a class="btn btn-link arriere" data-toggle="modal" data-target="#myModal3" style="position: relative; float: right; margin: -22px -28px;">
+                                              <img src="Img/button.png" style="width: 80px; height: 70px;" /></a>
+                                      </p>
+
+                                      <div class="modal fade" id="myModal3" role="dialog">
+                                          <div class="modal-dialog">
+                                              <!-- Modal content -->
+                                              <div class="modal-content">
+                                                  <div class="modal-header">
+                                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                      <h2 class="modal-title majuscule" style="font-weight: bold;">Manutentionnaire</h2>
+                                                      <p>Le Tallud</p>
+                                                      <p>publie le 15/10</p>
+                                                      <p>offre n°068452ADQZ</p>
+                                                  </div>
+                                                  <div class="modal-body col-md-12">
+                                                    <div class="col-md-6">
+                                                      <p>
+                                                          Appel Intérim recrute des manutentionnaires H/F sur PERIGNY
+
+                                                              Vous aurez pour mission:
+                                                              Chargement , déchargement de camion
+                                                              Port de charges, emballage et travaux de manutention.
+                                                      </p>
+                                                    </div>
+                                                      <div class="col-md-6">
+                                                      <p>
+                                                          Travail intérimaire - 1 Jour(s)
+                                                              Contrat travail
+                                                      </p>
+                                                      <p>7H Horaires normaux</p>
+                                                      <p>Salaire : Horaire de 9.88 Euros à 9.89 Euros sur 12 mois</p>
+                                                      <p>
+                                                        <a id="signin3" data-toggle="modal" data-target="#local3" class="btn btn-link arriere">Localisation</a>
+                                                      </p>
+                                                      </div>
+                                                      <div class="col-md-12">
+                                                        <h3 style="font-weight: bold; color: green;">Profil souhaité</h3>
+                                                        <h4 style="font-weight: bold; color: darkgreen;">expériance</h4>
+                                                        <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">Débutant accepté</p>
+                                                      </div>
+                                                      <div class="col-md-12">
+                                                        <h4 style="font-weight: bold; color: darkgreen;">Compétence</h4>
+                                                        <p class="col-md-3"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">
+                                                            Charger des marchandises, des produits	Cette compétence est indispensable
+                                                        </p>
+                                                        <p class="col-md-3"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">Décharger des marchandises, des produits	Cette compétence est indispensable</p>
+                                                        <p class="col-md-3"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">Déplacer des produits vers la zone de stockage</p>
+                                                        <p class="col-md-3"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">Trier et répartir les colis, marchandises selon les indications (codification, format, poids, nombre, ...)</p>
+                                                      </div>
+                                                      <div class="col-md-12">
+                                                        <h4 style="font-weight: bold; color: darkgreen;">Formation</h4>
+                                                        <p></p>
+                                                      </div>
+                                                      <div class="col-md-12">
+                                                        <h3 style="font-weight: bold; color: green;">info complémentaitre</h3>
+                                                        <p>Secteur d'activité : Activités des agences de travail temporaire</p>
+                                                      </div>
+                                                      <div class="col-md-12">
+                                                        <h3 style="font-weight: bold; color: green;">Secteur d'activité</h3>
+                                                        <p>art du spectacle vivant</p>
+                                                      </div>
+                                                      <div class="col-md-12">
+                                                        <h3 style="font-weight: bold; color: green;">Entreprise</h3>
+                                                        <h4 style="font-weight: bold; color: darkgreen;">l'entrepot</h4>
+                                                        <p>6 à 9 salariés</p>
+                                                      </div>
+                                                  </div>
+                                                  <div class="modal-footer col-sm-12">
+                                                    <!--  <h3>Aide en cuisine</h3>
+                                                      <p>offre n°068452ADQZ</p>-->
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <!--Modal for uploading photo-->
+                                      <div class="modal vertical-alignment-helper" id="local3" tabindex="-1" role="dialog" 	aria-labelledby="myModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                            <div class="modal-content">
+                                              <div class="modal-header"  style="background-color:#f35432;">
+                                                <button type="button" id="close3" class="close" data-dismiss="modal">&times;</button>
+                                                <h2 class="modal-title majuscule" style="font-weight: bold" id="local-title">Localisation</h2>
+                                              </div>
+                                              <div class="modal-body col-sm-12" style="border: 2px solid #f35432">
+                                                <p>L'offre est situé ce-dessous</p>
+                                                  <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.2965718507766724%2C46.62980508884004%2C-0.2929240465164185%2C46.63310198636873&amp;layer=mapnik&amp;marker=46.63145356270844%2C-0.2947479486465454" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=46.63145&amp;mlon=-0.29475#map=18/46.63145/-0.29475&amp;layers=N">Afficher une carte plus grande</a></small>
+                                              </div>
+                                            </div><!-- /.modal-content -->
+                                          </div><!-- /.modal-dialog -->
+                                      </div>
+                                  </div>
+                                  <div class="panel-footer contour">Publié le 15/10</div>
+                              </div>
+                          </div>
+
+                          <div class="col-md-6 test" data-custom-type="Secondigny CDD plein">
+                              <div class="panel">
+                                  <div class="panel-heading majuscule contour arriere" style="font-weight: bold;">Animateur / Animatrice d'atelier en maison de retraite</div>
+                                  <div class="panel-body contour">
+                                      <p style="text-align: justify center;">
+                                          <span style="color: #4775d1; font-weight: bold;">CDD</span> - Contrat à durée Déterminée<br />
+                                          <span style="color: #4775d1; font-weight: bold;">Secondigny</span><br />
+                                          Employeur : <span style="color: #4775d1; font-weight: bold;">Secondigny</span>
+
+                                           <a class="btn btn-link arriere" data-toggle="modal" data-target="#myModal4" style="position: relative; float: right; margin: -22px -28px;">
+                                               <img src="Img/button.png" style="width: 80px; height: 70px;" /></a>
+                                      </p>
+                                      <div class="modal fade" id="myModal4" role="dialog">
+                                          <div class="modal-dialog">
+                                              <!-- Modal content -->
+                                              <div class="modal-content">
+                                                  <div class="modal-header">
+                                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                      <h2 class="modal-title majuscule" style="font-weight: bold;">Animateur / Animatrice d'atelier en maison de retraite</h2>
+                                                      <p>Secondigny</p>
+                                                      <p>publie le 15/10</p>
+                                                      <p>offre n°87615416SDFQS</p>
+                                                  </div>
+                                                  <div class="modal-body col-sm-12">
+                                                    <div class="col-sm-6">
+                                                      <p>
+                                                          L'animateur (trice) élabore des projets d'animation adaptés aux personnes accueillies et participe à leur mise en œuvre dans un contexte multidisciplinaire.
+                                                              Les activités qu'il/elle organise doivent permettre de garder un lien avec l'extérieur et maintenir une vie culturelle et sociales au sein de la résidence. Il/elle recherche l'adhésion des résidents aux activités proposées afin de maintenir ou renforcer leurs aptitudes, de préserver leur mémoire et leur curiosité.
+                                                      </p>
+                                                    </div>
+                                                      <div class="col-sm-6">
+                                                        <p>
+                                                            Contrat à durée déterminée - 2 Mois
+                                                                Contrat travail
+                                                        </p>
+                                                        <p>
+                                                            Durée du travail
+                                                                35H Horaires normaux
+                                                        </p>
+                                                        <p>
+                                                            Salaire : Mensuel de 1621.04 Euros sur 12 mois
+                                                        </p>
+                                                        <p>
+                                                          <a id="signin4" data-toggle="modal" data-target="#local4" class="btn btn-link arriere">Localisation</a>
+                                                        </p>
+                                                    </div>
+                                                      <div class="col-sm-12">
+                                                        <h3 style="font-weight: bold; color: green;">Profil souhaité</h3>
+                                                        <h4 style="font-weight: bold; color: darkgreen;">expériance</h4>
+                                                        <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">1 an</p>
+                                                      </div>
+                                                      <div class="col-sm-12">
+                                                        <h4 style="font-weight: bold; color: darkgreen;">Compétence</h4>
+                                                        <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">
+                                                            Concevoir la séance d'animation et préparer le matériel et l'espace d'animation
+                                                        </p>
+                                                        <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">Concevoir le programme des activités selon les spécificités du public</p>
+                                                        <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">Guider les participants lors de la réalisation de l'activité ou proposer des adaptations selon leur progression</p>
+                                                        <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">Réaliser le bilan du projet d'animation et proposer des axes d'évolution</p>
+                                                      </div>
+                                                      <div class="col-sm-12">
+                                                        <h4 style="font-weight: bold; color: darkgreen;">Formation</h4>
+                                                        <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">Bac ou équivalent - Diplôme d'état d'Animateur	</p>
+                                                      </div>
+                                                      <div class="col-sm-12">
+                                                        <h3 style="font-weight: bold; color: green;">info complémentaitre</h3>
+                                                        <p>Secteur d'activité : Hébergement médicalisé pour personnes âgées</p>
+                                                        <p>Candidatures en cours : 1</p>
+                                                      </div>
+                                                      <div class="col-sm-12">
+                                                        <h3 style="font-weight: bold; color: green;">Entreprise</h3>
+                                                        <h4 style="font-weight: bold; color: darkgreen;">RESIDENCE LA CLAIRE FONTAINE</h4>
+                                                        <p>
+                                                            RESIDENCE LA CLAIRE FONTAINE La Résidence La Claire Fontaine située à La Rochelle (17) appartenant au Groupe ORPEA (acteur privé de référence du secteur de la dépendance)
+                                                                50 à 99 salariés
+                                                        </p>
+                                                    </div>
+                                                  </div>
+                                                  <div class="modal-footer col-sm-12">
+                                                      <!--<h3>Manutentionneaire</h3>
+                                                      <p>offre n°87615416SDFQS</p>-->
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <!--Modal for uploading photo-->
+                                      <div class="modal vertical-alignment-helper" id="local4" tabindex="-1" role="dialog" 	aria-labelledby="myModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                            <div class="modal-content">
+                                              <div class="modal-header" style="background-color:#f35432;">
+                                                <button type="button" id="close4" class="close" data-dismiss="modal">&times;</button>
+                                                <h2 class="modal-title majuscule" style="font-weight: bold" id="local-title">Localisation</h2>
+                                              </div>
+                                              <div class="modal-body col-sm-12" style="border: 2px solid #f35432">
+                                                <p>L'offre est situé ce-dessous</p>
+                                                <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.4191702604293823%2C46.608655966059644%2C-0.41734635829925537%2C46.610305083953044&amp;layer=mapnik&amp;marker=46.60948145257755%2C-0.41825830936431885" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=46.60948&amp;mlon=-0.41826#map=19/46.60948/-0.41826&amp;layers=N">Afficher une carte plus grande</a></small>
+                                              </div>
+                                            </div><!-- /.modal-content -->
+                                          </div><!-- /.modal-dialog -->
+                                      </div>
+                                  </div>
+                                  <div class="panel-footer contour">Publié le 15/10</div>
+                              </div>
+                          </div>
+
+                          <div class="col-md-6 test" data-custom-type="LaPeyratte CDI plein">
+                              <div class="panel">
+                                  <div class="panel-heading majuscule contour arriere" style="font-weight: bold;">Accastilleur (H/F)</div>
+                                  <div class="panel-body contour">
+                                      <p style="text-align: justify center;">
+                                          <span style="color: #4775d1; font-weight: bold;">CDI</span> - Contrat à durée indéternimée<br />
+                                          <span style="color: #4775d1; font-weight: bold;">La Peyratte</span><br />
+                                          Employeur : <span style="color: #4775d1; font-weight: bold;">La Peyratte</span>
+
+                                       <a class="btn btn-link arriere" data-toggle="modal" data-target="#myModal5" style="position: relative; float: right; margin: -22px -28px;">
+                                           <img src="Img/button.png" style="width: 80px; height: 70px;" /></a>
+                                      </p>
+                                      <div class="modal fade" id="myModal5" role="dialog">
+                                          <div class="modal-dialog">
+                                              <!-- Modal content -->
+                                              <div class="modal-content">
+                                                  <div class="modal-header">
+                                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                      <h2 class="modal-title majuscule" style="font-weight: bold;">Accastilleur (H/F)</h2>
+                                                      <p>La Peyratte</p>
+                                                      <p>publie le 15/10</p>
+                                                      <p>offre n°68713QSDQ</p>
+                                                  </div>
+                                                  <div class="modal-body col-sm-12">
+                                                    <div class="col-sm-6">
+                                                      <p>
+                                                          L'activité s'exerce au sein d'entreprise semi-industrielle. Vous êtes confronté au bruit, aux poussières possibles dû au ponçage, aux vibrations des outils portatifs (efforts sensoriels et visuels dans des espaces confinés).
+                                                              Vous exercez souvent dans des positions inconfortables lors des installations en intérieur.
+
+                                                              Vos missions seront les suivantes:
+                                                              - Identifier des contraintes dimensionnelles, faire du repérage et du positionnement précis
+                                                              - Identifier et retranscrire à l'équipement les besoins exprimés par le client
+                                                              -  Réaliser des éléments d'agencement
+                                                              - Vérifier l'état des équipements et des matériels de sécurité et leur conformité à la navigation
+
+                                                              Vous avez des connaissances en accastillage, matériel de navigation et normes de sécurité.
+                                                      </p>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                      <p>
+                                                          Contrat à durée indéterminée
+                                                              Contrat travail
+                                                      </p>
+                                                      <p>
+                                                          37H25 Horaires normaux
+                                                              Horaires fixes:7h30-12h/ 12h30-15h27
+                                                      </p>
+                                                      <p>
+                                                          Salaire : Annuel de 21300 Euros à 22740 Euros sur 12 mois
+                                                              Primes
+                                                              Selon profil
+                                                      </p>
+                                                      <p>
+                                                        <a id="signin5" data-toggle="modal" data-target="#local5" class="btn btn-link arriere">Localisation</a>
+                                                      </p>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                      <hr />
+                                                      <h3 style="font-weight: bold; color: green;">Profil souhaité</h3>
+                                                      <h4 style="font-weight: bold; color: darkgreen;">expériance</h4>
+                                                      <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">
+                                                          Débutant accepté - Expérience souhaitée de 2 ans
+                                                      </p>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                      <h4 style="font-weight: bold; color: darkgreen;">Compétence</h4>
+                                                      <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">
+                                                          Accastillage
+                                                      </p>
+                                                      <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">Entretenir l'équipement nautique</p>
+                                                      <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">Matériel de navigation</p>
+                                                      <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">
+                                                          Réaliser des éléments d'agencement
+                                                      </p>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                      <h4 style="font-weight: bold; color: darkgreen;">Formation</h4>
+                                                      <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">CAP, BEP ou équivalent Entretien marine plaisance - Maintenance des industries plaisance</p>
+                                                      <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">CAP, BEP ou équivalent - CAP/BEP en mécanique ou menuiserie</p>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                      <h3 style="font-weight: bold; color: green;">info complémentaitre</h3>
+                                                      <p>Secteur d'activité : Construction de bateaux de plaisance</p>
+                                                    </div>
+                                                  </div>
+                                                  <div class="modal-footer col-sm-12">
+                                                    <!--  <h3>Aide en cuisine</h3>
+                                                      <p>offre n°68713QSDQ</p>-->
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                      </div>
+                                      <!--Modal for uploading photo-->
+                                      <div class="modal vertical-alignment-helper" id="local5" tabindex="-1" role="dialog" 	aria-labelledby="myModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                            <div class="modal-content">
+                                              <div class="modal-header" style="background-color:#f35432;">
+                                                <button type="button" id="close5" class="close" data-dismiss="modal">&times;</button>
+                                                <h2 class="modal-title majuscule" style="font-weight: bold" id="local-title">Localisation</h2>
+                                              </div>
+                                              <div class="modal-body col-sm-12" style="border: 2px solid #f35432">
+                                                <p>L'offre est situé ce-dessous</p>
+                                                <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.14988452196121219%2C46.6744250874231%2C-0.14806061983108523%2C46.67607220180374&amp;layer=mapnik&amp;marker=46.675249571064484%2C-0.14897257089614868" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=46.67525&amp;mlon=-0.14897#map=19/46.67525/-0.14897&amp;layers=N">Afficher une carte plus grande</a></small>
+                                              </div>
+                                            </div><!-- /.modal-content -->
+                                          </div><!-- /.modal-dialog -->
+                                      </div>
+                                  </div>
+                                  <div class="panel-footer contour">Publié le 15/10</div>
+                              </div>
+
+                          </div>
+
+                          <div class="col-md-6 test" data-custom-type="Viennay TTI partiel">
+                              <div class="panel">
+                                  <div class="panel-heading majuscule contour arriere" style="font-weight: bold;">Commercial / Commerciale auprès d'une clientèle</div>
+                                  <div class="panel-body contour">
+                                      <p style="text-align: justify center;">
+                                          <span style="color: #4775d1; font-weight: bold;">TTI</span> - Contrat à durée indéternimée<br />
+                                          <span style="color: #4775d1; font-weight: bold;">Viennay</span><br />
+                                          Employeur : <span style="color: #4775d1; font-weight: bold;">Viennay</span>
+
+                                           <a class="btn btn-link arriere" data-toggle="modal" data-target="#myModal6" style="position: relative; float: right; margin: -22px -28px;">
+                                               <img src="Img/button.png" style="width: 80px; height: 70px;" /></a>
+                                      </p>
+                                      <div class="modal fade" id="myModal6" role="dialog">
+                                          <div class="modal-dialog">
+                                              <!-- Modal content -->
+                                              <div class="modal-content">
+                                                  <div class="modal-header">
+                                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                      <h2 class="modal-title majuscule" style="font-weight: bold;">Commercial / Commerciale auprès d'une clientèle</h2>
+                                                      <p>Viennay</p>
+                                                      <p>publie le 15/10</p>
+                                                      <p>offre n°874351QSDQSD</p>
+                                                  </div>
+                                                  <div class="modal-body col-sm-12">
+                                                    <div class="col-sm-6">
+                                                      <p>
+                                                          Nous recherchons un Technico-commercial pour effectuer un BTS NDRC (Négociation et Digitalisation de la Relation Client) en alternance (contrat de professionnalisation).
+
+                                                              Profil: Âme du commerce, autonome, motivé, dynamique, permis B obligatoire, Bac STI2D ou équivalent souhaité
+                                                              Vos missions : B TO B, prospection physique, visites de chantier, négociation, location, manutention,
+
+                                                              Salaire compris entre 55 % et 80 % du SMIC selon votre âge et le dernier diplôme obtenu.
+
+                                                              Les cours auront lieu au centre de formation (Alternance Sud Atlantique) de Rochefort : 1 jour de formation par semaine + 1 semaine toutes les 4 à 5 semaines. Le 1er contact se fera avec le centre de formation de Rochefort,
+                                                      </p>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                      <p>
+                                                          Contrat à durée déterminée - 24 Mois
+                                                              Cont. professionnalisation
+                                                      </p>
+                                                      <p>35H Horaires normaux</p>
+                                                      <p>Salaire : 824.18 à 1198,80 €</p>
+                                                      <p>
+                                                        <a id="signin6" data-toggle="modal" data-target="#local6" class="btn btn-link arriere">Localisation</a>
+                                                      </p>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                      <h3 style="font-weight: bold; color: green;">Profil souhaité</h3>
+                                                      <h4 style="font-weight: bold; color: darkgreen;">expériance</h4>
+                                                      <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">Débutant accepté</p>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                      <h4 style="font-weight: bold; color: darkgreen;">Compétence</h4>
+                                                      <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">
+                                                          Conseiller une clientèle ou un public
+                                                      </p>
+                                                      <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">Définir le plan d'action commercial et établir le plan de tournée (ciblage, interlocuteurs, préparation de dossiers techniques)</p>
+                                                      <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">Définir les modalités d'une vente avec un client</p>
+                                                      <p class="col-md-4"style="border:1px solid grey; border-radius: 10px;width:150px;text-align:center;margin:10px;">Effectuer une démonstration devant un client ou un public</p>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                      <h4 style="font-weight: bold; color: darkgreen;">Formation</h4>
+                                                      <p></p>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                      <h3 style="font-weight: bold; color: green;">info complémentaitre</h3>
+                                                      <p>Secteur d'activité : Formation continue d'adultes</p>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                      <h3 style="font-weight: bold; color: green;">Entreprise</h3>
+                                                      <h4 style="font-weight: bold; color: darkgreen;">mélissa de sousa</h4>
+                                                      <p>
+                                                          mélissa de sousa Envoyer CV et Lettre de motivation par mail: conseiller.formation@alternance-sud-atlantique.com Contactez nous directement par téléphone au 05 46 87 19 72 Le 1er contact se fera avec le centre de formation de Rochefort
+                                                              10 à 19 salariés
+                                                      </p>
+                                                    </div>
+                                                  </div>
+                                                  <div class="modal-footer col-sm-12">
+                                                      <!--<h3>Aide en cuisine</h3>
+                                                      <p>offre n°874351QSDQSD</p>-->
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <!--Modal for uploading photo-->
+                                      <div class="modal vertical-alignment-helper" id="local6" tabindex="-1" role="dialog" 	aria-labelledby="myModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                            <div class="modal-content">
+                                              <div class="modal-header" style="background-color:#f35432;">
+                                                <button type="button" id="close6"class="close" data-dismiss="modal">&times;</button>
+                                                <h2 class="modal-title majuscule" style="font-weight: bold" id="local-title">Localisation</h2>
+                                              </div>
+                                              <div class="modal-body col-sm-12" style="border: 2px solid #f35432">
+                                                <p>L'offre est situé ce-dessous</p>
+                                                <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.24454772472381595%2C46.68799986023391%2C-0.24089992046356204%2C46.69129321120071&amp;layer=mapnik&amp;marker=46.689646560818424%2C-0.24272382259368896" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=46.68965&amp;mlon=-0.24272#map=18/46.68965/-0.24272&amp;layers=N">Afficher une carte plus grande</a></small>
+                                              </div>
+                                            </div><!-- /.modal-content -->
+                                          </div><!-- /.modal-dialog -->
+                                      </div>
+                                  </div>
+                                  <div class="panel-footer contour">Publié le 15/10</div>
+                              </div>
+
+                          </div>
+
+                    </div>
+                </div>
+                <br />
+
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</body>
+</html>
